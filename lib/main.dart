@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'Lecture3 - widgets/screen1.dart';
 main(){
   runApp(MyApp());
 } //main
@@ -13,16 +13,8 @@ class MyApp extends StatelessWidget{
   //int x
  Widget build(BuildContext context){
     return MaterialApp(
-      home: Scaffold(
-        backgroundColor: Colors.blue,
-        appBar: AppBar(
-          title: Text("Hello App Bar"),
-          backgroundColor:Colors.yellow ,
-
-        ),
-
-      ),
-      // debugShowCheckedModeBanner: false,
+      home: ScreenOne(),
+      debugShowCheckedModeBanner: false,
     );
   }
 
