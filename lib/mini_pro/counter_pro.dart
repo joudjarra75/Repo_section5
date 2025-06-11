@@ -40,6 +40,7 @@ class _CounterPro extends State<CounterPro>{
       ),
       floatingActionButton: FloatingActionButton(onPressed:increseCounter,
       child:Text("add"),),
+      floatingActionButtonLocation:FloatingActionButtonLocation.startDocked ,
     );
   }
 }
