@@ -10,12 +10,13 @@ class ScreenCall1 extends StatelessWidget {
         child: SizedBox(
           width: double.infinity,
           child: Column(
+
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
               Text('Sister',
                 style: TextStyle(
                     fontSize: 50,
-                    fontWeight: FontWeight.bold,
+                    fontWeight: FontWeight. bold,
                     color: Colors.white
                 ),),
               SizedBox(
