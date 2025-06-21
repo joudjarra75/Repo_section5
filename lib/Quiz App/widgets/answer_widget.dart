@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_section5/Quiz%20App/models/answer_model.dart';
 
 class AnswerWidget extends StatelessWidget {
-  Map <String,dynamic> answerMap;
-  AnswerWidget({required this.answerMap});
+  AnswerModel answerModel;
+  VoidCallback increseFun;
+  AnswerWidget({required this.answerModel,required this.increseFun});
 
   @override
   Widget build(BuildContext context) {
@@ -10,8 +12,11 @@ class AnswerWidget extends StatelessWidget {
       width: double.infinity,
       child: Padding(
         padding: const EdgeInsets.all(8.0),
-        child: ElevatedButton(onPressed: answerMap["onPress"],
-            child: Text(answerMap["item"])),
+        child: ElevatedButton(onPressed: (){
+          answerModel.onPress();
+          increseFun();
+        }
+          ,  child: Text(answerModel.title)),
       ),
     );
   }

@@ -1,27 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_section5/Quiz%20App/models/answer_model.dart';
+import 'package:flutter_section5/Quiz%20App/models/question_model.dart';
 import 'package:flutter_section5/Quiz%20App/widgets/answer_widget.dart';
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
-
+class HomePage extends StatefulWidget {
+   HomePage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    List<Map<String,dynamic>> answers = [
-      {
-        "item" : "Pasta",
-        "onPress" : () => debugPrint('pasta')
-      },
-      {
-        "item" : "Rice",
-        "onPress" : () => debugPrint('rice')
-      },
-      {
-        "item" : "Mansaf",
-        "onPress" : () => debugPrint('mansaf')
-      },
+  State<HomePage> createState() => _HomePageState();
+}
 
-    ];
+class _HomePageState extends State<HomePage> {
+  @override
+  int index = 0 ;
+  Widget build(BuildContext context) {
+
+
     return Scaffold(
       backgroundColor: Colors.pink[100],
       body: SafeArea(
@@ -31,14 +25,21 @@ class HomePage extends StatelessWidget {
             padding: const EdgeInsets.all(10),
             child: Column(
               children: [
-                Text('What is your fav food?',
+                Text(questions[index].title,
                 style: TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 30
                 ),),
               Column(
-                  children: answers.map((a) {
-                    return AnswerWidget(answerMap: a); }).toList()
+                  children: questions[index].answerList.map((a) {
+                    return AnswerWidget(answerModel:a,
+                    increseFun: (){
+                     setState(() {
+                       if(index < questions.length - 1){
+                         index++;
+                       }
+                     });
+                    },); }).toList()
                     )
               ],
             ),
