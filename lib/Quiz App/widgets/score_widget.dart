@@ -11,18 +11,18 @@ class ScoreWidget extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Text(
+       const Text(
           "Congratulation!",
           style: TextStyle(
             fontSize: 40,
             fontWeight: FontWeight.bold,
           ),
         ),
-        Text("Your score is $score"),
+         Text("Your score is $score"),
         SizedBox(height: 30),
         TextButton(
           onPressed: resetFun,
-          child: Text("Reset"),
+          child: const Text("Reset"),
         ),
       ],
     );

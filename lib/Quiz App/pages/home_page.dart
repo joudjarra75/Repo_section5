@@ -13,15 +13,15 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   @override
-  int index = 0;
-  int score = 0;
+  int index = 0 , score = 0;
   int limitScore = questions.length * 5;
   bool scoreScreen = false;
+
   Widget build(BuildContext context) {
     scoreScreen = score >= limitScore;
-    print(score);
+
     return Scaffold(
-      backgroundColor: Colors.pink[100],
+      backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(
           width: double.infinity,
