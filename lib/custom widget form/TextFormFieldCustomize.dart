@@ -8,6 +8,7 @@ class Textformfieldcustomize extends StatelessWidget {
   IconData? suffIcon;
   Color enBorderColor ;
   Color foBorderColor  ;
+  TextEditingController txt;
   Textformfieldcustomize(
       {required this.lbl,
         required this.hint,
@@ -15,11 +16,13 @@ class Textformfieldcustomize extends StatelessWidget {
         this.suffIcon ,
         this.enBorderColor = Colors.yellow,
         this.foBorderColor  = Colors.orange,
+        required this.txt
       });
 
   @override
   Widget build(BuildContext context) {
     return  TextFormField(
+      controller:txt ,
       decoration: InputDecoration(
         label: Text(lbl),
         hintText: hint,

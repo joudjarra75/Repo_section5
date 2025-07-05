@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 
 class ImagesClass extends StatefulWidget {
-  const ImagesClass({super.key});
+  String name;
+   ImagesClass({required this.name});
 
   @override
   State<ImagesClass> createState() => _ImagesClassState();
 }
 
 class _ImagesClassState extends State<ImagesClass> {
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,6 +19,7 @@ class _ImagesClassState extends State<ImagesClass> {
           width: MediaQuery.of(context).size.width,
           child: Column(
             children: [
+              Text('Hi ${widget.name}'),
               Text('This image from assets'),
               Image.asset('assets/images/flutter-3.png'),
               SizedBox(height: 30,),
