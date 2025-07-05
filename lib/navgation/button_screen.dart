@@ -15,8 +15,7 @@ class _ButtonScreenState extends State<ButtonScreen> {
       appBar: AppBar(),
       body: Center(
         child: ElevatedButton(onPressed: (){
-          Navigator.of(context).push(
-              MaterialPageRoute(builder: (_) {
+          Navigator.of(context).push(MaterialPageRoute(builder: (_) {
                 return HomeScreen();
               }));
         }, child: Text('Go to Home')),
